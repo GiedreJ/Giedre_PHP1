@@ -1,24 +1,14 @@
 <?php 
 
-$a = 6;
-$b = 10;
-$c = 51;
-$d = 12;
-$e = 3;
-$f = 0;
+$distance = rand(200, 400);
+$consumption = 7.5;
+$price_l = 1.3;
 
-$suma = $c + $d;
-$atimtis = $f - $e;
-$dalyba = $d / $e;
-$daugyba = $c * $d * $f;
 
-$kvadratu = $e ** $e;
-$pliusVienas = ++$f;
-
-$skaicius3 = 10;
-$skaicius4 = 20;
-$skaicius3 %= $skaicius4;
-    
+$fuel_total = round($distance * $consumption / 100);
+$price_trip = round($fuel_total * $price_l);
+$text = 'Nuvažiavus' . $distance . 'km,' . 'mašina sunaudos' . $fuel_total . 'l. kuro. Kaina:' . $price_trip . 'pinigų.';
+       
 ?>
 
 
@@ -31,14 +21,6 @@ $skaicius3 %= $skaicius4;
         <style></style>
     </head>
     <body>
-       <?php 
-       print $suma . '<br>';
-       print $atimtis . '<br>';
-       print $dalyba . '<br>';
-       print $daugyba . '<br>';
-       print $kvadratu . '<br>';
-       print $pliusVienas . '<br>';
-       print $skaicius3 . '<br>';
-       ?>
+       <?php print $text ?>
     </body>
 </html>
