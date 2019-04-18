@@ -1,13 +1,21 @@
 <?php 
 
-$distance = rand(200, 400);
+$distance = rand(500, 2000);
 $consumption = 7.5;
 $price_l = 1.3;
+$my_money = 100;
 
 
 $fuel_total = round($distance * $consumption / 100);
 $price_trip = round($fuel_total * $price_l);
-$text = 'Nuvažiavus' . $distance . 'km,' . 'mašina sunaudos' . $fuel_total . 'l. kuro. Kaina:' . $price_trip . 'pinigų.';
+if ($my_money >= $price_trip) {
+    $isvada = 'galiu';
+} else { 
+     $isvada = 'negaliu'; 
+    
+}
+
+$text = 'Išvada:' . ' ' . 'aš sau tai' . ' ' . $isvada . ' ' . 'leisti'; 
        
 ?>
 
