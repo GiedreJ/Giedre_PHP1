@@ -1,13 +1,23 @@
 <?php 
 
-$time=date('s');
-$timer=$time % 60;
-$explo=$timer<1;
+$a = 6;
+$b = 10;
+$c = 51;
+$d = 12;
+$e = 3;
+$f = 0;
 
-$plius=date('s') + 50;
+$suma = $c + $d;
+$atimtis = $f - $e;
+$dalyba = $d / $e;
+$daugyba = $c * $d * $f;
 
-$img_height=$plius + 150 . 'px;';
-$img_width=$plius + 150 . 'px;'
+$kvadratu = $e ** $e;
+$pliusVienas = ++$f;
+
+$skaicius3 = 10;
+$skaicius4 = 20;
+$skaicius3 %= $skaicius4;
     
 ?>
 
@@ -16,31 +26,19 @@ $img_width=$plius + 150 . 'px;'
 
 <html>
     <head>
-        <title>Bomba</title>
+        <title></title>
         <meta charset="UTF-8">
-        <style type="text/css">
-            .imgboom {
-                background-image: url(/IMG/bomb.png);
-                background-size: cover;
-                height: <?php print $img_height; ?>
-                width: <?php print $img_width; ?>
-            }
-            .imgboom-1 {
-                background-image: url(/IMG/boom.png);
-                background-size: cover;
-                height: 150px;
-                width: 150px;
-            }
-        </style>
+        <style></style>
     </head>
     <body>
-        <div class="imgboom imgboom-<?php print $explo; ?>">
-        </div>
-        
-	<?php
-        print $time. '<br>';
-        print $timer. '<br>';
-        print $explo. '<br>';
-        ?>
+       <?php 
+       print $suma . '<br>';
+       print $atimtis . '<br>';
+       print $dalyba . '<br>';
+       print $daugyba . '<br>';
+       print $kvadratu . '<br>';
+       print $pliusVienas . '<br>';
+       print $skaicius3 . '<br>';
+       ?>
     </body>
 </html>
