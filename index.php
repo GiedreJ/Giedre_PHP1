@@ -1,18 +1,13 @@
 <?php 
 
-$grizai_velai = rand(0,1);
-$grizai_isgeres = rand(0,1);
+$oras = rand(0, 1);
 
-if ($grizai_velai && $grizai_isgeres) {
-    $zinute = 'Miegosi ant sofos, nes grįžai vėlai ir išgėręs';
-}   elseif ($grizai_velai XOR $grizai_isgeres) {
-    if ($grizai_velai) {
-   $zinute = 'Nemiegosi ant sofos, nes negrįžai išgėręs';
-    } if ($grizai_isgeres) {
-   $zinute = 'Nemiegosi ant sofos, nes negrįžai vėlai';
-    }
+if ($oras) {
+    $css_class = "sauleta";
+    $tekstas = "Saulėta";
 }   else {
-   $zinute = 'Nemiegosi ant sofos, nes nieko nepadarei';
+    $css_class = "debesuota";
+    $tekstas = "Debesuota";
 }
 
 ?>
@@ -24,9 +19,27 @@ if ($grizai_velai && $grizai_isgeres) {
     <head>
         <title></title>
         <meta charset="UTF-8">
-        <style></style>
+        <style type="text/css">
+            .sauleta {
+                background-image: url(IMG/sunny.png);
+                width: 150px;
+                height: 150px;
+                background-size: cover;
+            }
+            .debesuota {
+                background-image: url(IMG/cloudy.png);
+                width: 150px;
+                height: 150px;
+                background-size: cover;
+            }
+            
+        </style>
     </head>
     <body>
-       <?php print $zinute ?>
+        <div class ="container">
+            <div class="<?php print $css_class;?>">
+            </div>
+            <h1><?php print $tekstas ?></h1>
+        </div>       
     </body>
 </html>
