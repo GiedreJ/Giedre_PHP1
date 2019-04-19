@@ -1,22 +1,20 @@
 <?php 
 
-$distance = rand(500, 2000);
-$consumption = 7.5;
-$price_l = 1.3;
-$my_money = 100;
+$grizai_velai = rand(0,1);
+$grizai_isgeres = rand(0,1);
 
-
-$fuel_total = round($distance * $consumption / 100);
-$price_trip = round($fuel_total * $price_l);
-if ($my_money >= $price_trip) {
-    $isvada = 'galiu';
-} else { 
-     $isvada = 'negaliu'; 
-    
+if ($grizai_velai && $grizai_isgeres) {
+    $zinute = 'Miegosi ant sofos, nes grįžai vėlai ir išgėręs';
+}   elseif ($grizai_velai XOR $grizai_isgeres) {
+    if ($grizai_velai) {
+   $zinute = 'Nemiegosi ant sofos, nes negrįžai išgėręs';
+    } if ($grizai_isgeres) {
+   $zinute = 'Nemiegosi ant sofos, nes negrįžai vėlai';
+    }
+}   else {
+   $zinute = 'Nemiegosi ant sofos, nes nieko nepadarei';
 }
 
-$text = 'Išvada:' . ' ' . 'aš sau tai' . ' ' . $isvada . ' ' . 'leisti'; 
-       
 ?>
 
 
@@ -29,6 +27,6 @@ $text = 'Išvada:' . ' ' . 'aš sau tai' . ' ' . $isvada . ' ' . 'leisti';
         <style></style>
     </head>
     <body>
-       <?php print $text ?>
+       <?php print $zinute ?>
     </body>
 </html>
